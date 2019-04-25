@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"net/http"
-
-	model "github.com/guoruibiao/shorturl/model"
+	"shorturl/model"
+	// model "github.com/guoruibiao/shorturl/model"
 )
 
 type ShortDao struct{}
