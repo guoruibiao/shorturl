@@ -14,7 +14,7 @@ script:      # 执行的脚步，但是go默认会执行下面的这些命令的
   - echo $GOPATH
   - echo $PWD
   - cd $GOPATH/src
-  - mv ../shorturl $GOPATH/src/
+  - mv $GOPATH/src/github.com/guoruibiao/shorturl $GOPATH/src/
   - echo $PWD
   - cd ./shorturl/
   - go test -v ./...
