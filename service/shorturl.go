@@ -1,10 +1,10 @@
 package service
 
 import (
-	// "shorturl/dao"
-	// "shorturl/model"
-	dao "github.com/guoruibiao/shorturl/dao"
-	model "github.com/guoruibiao/shorturl/model"
+	"shorturl/dao"
+	"shorturl/model"
+	// dao "github.com/guoruibiao/shorturl/dao"
+	// model "github.com/guoruibiao/shorturl/model"
 )
 
 type ShortURLService struct {
