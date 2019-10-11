@@ -2,15 +2,15 @@ package dao
 
 import (
 	"testing"
+	"net/url"
 )
 
-func Test_SinaURLShort(t *testing.T) {
-	originurl := "https://github.com"
+func TestShortDao_Api985URLShort(t *testing.T) {
+	longurl := url.QueryEscape("https://github.com")
 	dao, _ := New()
-	response, _ := dao.SinaURLShort(originurl)
-	if response.URLS[0].ShortURL == "http://t.cn/RxnlTYR" {
-		t.Log("SinaURLShort passed")
-	} else {
-		t.Error("SinaURLShort failed", originurl, " to ", response.URLS[0].ShortURL)
+	resp, err := dao.Api985URLShort(longurl)
+	if err!=nil {
+		t.Error(err)
 	}
+	t.Log(resp.Result)
 }

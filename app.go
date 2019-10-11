@@ -4,10 +4,8 @@ import (
 	"net/http"
 	"net/url"
 
-	"shorturl/service"
-
 	"github.com/gin-gonic/gin"
-	// service "github.com/guoruibiao/shorturl/service"
+	"github.com/guoruibiao/shorturl/service"
 )
 
 func main() {

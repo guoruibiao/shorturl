@@ -1,10 +1,10 @@
 package service
 
 import (
-	"shorturl/dao"
-	"shorturl/model"
 	// dao "github.com/guoruibiao/shorturl/dao"
 	// model "github.com/guoruibiao/shorturl/model"
+	"github.com/guoruibiao/shorturl/model"
+	"github.com/guoruibiao/shorturl/dao"
 )
 
 type ShortURLService struct {
@@ -22,7 +22,13 @@ func New() (ShortURLService, error) {
 	return service, nil
 }
 
-func (service ShortURLService) ShortURL(origin string) (response *model.Response, err error) {
-	response, err = service.shortUrlDao.SinaURLShort(origin)
+func (service ShortURLService) ShortURL(encodedurl string) (response *model.Response, err error) {
+	response, err = service.shortUrlDao.SouGouURLShort(encodedurl)
+	if err != nil {
+		response, err = service.shortUrlDao.Api985URLShort(encodedurl)
+		if err != nil {
+			response, err = service.shortUrlDao.ChkajaURLShort(encodedurl)
+		}
+	}
 	return
 }
